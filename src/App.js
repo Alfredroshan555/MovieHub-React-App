@@ -21,6 +21,7 @@ function App() {
   const [search,setSearch] = useState('')
   
 
+
   const getMoviesData = async (title) => {
     const response = await fetch(`${url}&s=${title}`)
     const data = await response.json()
@@ -39,7 +40,7 @@ function App() {
           value={search}
           onChange={(e) => {setSearch(e.target.value) }}
         />
-        <button className='button'style={ buttonStyle }
+        <button className='button' onClick={()=>getMoviesData(search)} style={ buttonStyle }
         >Seacrh</button>
 
       </div>
